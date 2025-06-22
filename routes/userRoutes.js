@@ -13,7 +13,7 @@ import {
 
 
 
-} from '../controller/controller.js';
+} from '../controllers/userController.js';
 
 
 import { authenticate, authorizeAdmin } from '../middlewares/authmiddleware.js';    

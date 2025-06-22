@@ -1,17 +1,18 @@
-import express from 'express';
-import formidable from 'express-formidable';
+import express from "express";
 
+import formidable from "express-formidable";
 
-import { authenticate, authorizeAdmin } from '../middlewares/authmiddleware.js';
-import checkId from '../middlewares/checkId.js';
+import checkId from "../middlewares/checkId.js ";
+
+import  {addProduct}  from "../controllers/productController.js";
+
+import { authenticate, authorizeAdmin} from "../middlewares/authmiddleware.js";
+
 
 const router = express.Router();
 
+router.route("/").post(authenticate, authorizeAdmin, formidable(), addProduct);
 
-import { addProduct } from '../controller/productController.js';
-
-
-router.route("/").post( formidable(), addProduct)
 
 
 export default router;
